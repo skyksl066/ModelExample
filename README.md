@@ -2,6 +2,7 @@
 The project uses the MVC model example for validation.
 
 - Framework .NET Core 3.1
+- Asp .Net MVC 6
 
 [Tutorial: Part 9, add validation to an ASP.NET Core MVC app](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-6.0)
 
