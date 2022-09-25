@@ -1,0 +1,72 @@
+﻿@model Create
+@{ 
+    ViewBag.Title = "Create";
+}
+<form asp-action="Create" method="post">
+    @*@Html.AntiForgeryToken()*@
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="Emp_id"></label>
+                <select asp-for="Emp_id" class="form-control col-md-8" required>
+                    <option value="">--Please Select--</option>
+                    <option value="IA00395">IA00395</option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="Agent"></label>
+                <select asp-for="Agent" class="form-control col-md-8" required>
+                    <option value="">--Please Select--</option>
+                    <option value="IA00395">IA00395</option>
+                    <option value="I116643">I116643</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" type="date" class="form-control" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="EndDate"></label>
+                <input asp-for="EndDate" type="date" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label>StartTime</label>
+                <select asp-for="StartTime" asp-items="Model.SelectTime"
+                        class="form-control col-md-8" required>
+                    <option value="">--Please Select--</option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>StartTime</label>
+                <select asp-for="EndTime" asp-items="Model.SelectTime"
+                        class="form-control col-md-8" required>
+                    <option value="">--Please Select--</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">submit</button>
+</form>
+@section Scripts{ 
+    @if (ViewBag.Message != null)
+    {
+        <script>
+            alert(`@Html.Raw(ViewBag.Message)`);
+        </script>
+    }
+}
